@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
         const posts = postData.map((post) => post.get({ plain: true }));
 
         res.render('homepage', {
-            loggedIn: req.session.loggedIn,
+            logged_in: req.session.logged_in,
             posts,
         });
     } catch (err) {
@@ -46,7 +46,7 @@ router.get('/post/:id', async (req, res) => {
 
         res.render('post', {
             ...post,
-            loggedIn: req.session.loggedIn,
+            logged_in: req.session.logged_inn,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -55,7 +55,7 @@ router.get('/post/:id', async (req, res) => {
 
 router.get('/login', (req, res) => {
         res.render('login', {
-            loggedIn: req.session.loggedIn,
+            logged_in: req.session.logged_in,
         });
 });
 
