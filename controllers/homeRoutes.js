@@ -7,7 +7,12 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: Comment,
-                    attributes: ['body'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['username'],
+                        },
+                    ],
                 },
                 {
                     model: User,
@@ -33,7 +38,12 @@ router.get('/post/:id', async (req, res) => {
             include: [
                 {
                     model: Comment,
-                    attributes: ['body'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['username'],
+                        },
+                    ],
                 },
                 {
                     model: User,
@@ -46,7 +56,7 @@ router.get('/post/:id', async (req, res) => {
 
         res.render('post', {
             ...post,
-            logged_in: req.session.logged_inn,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
