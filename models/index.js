@@ -8,6 +8,11 @@ User.hasMany(Post, {
     onDelete: 'CASCADE'
 });
 
+// Posts must have a user
+Post.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
 // User can create many comments - upon deletion of user, delete their comments.
 User.hasMany(Comment, {
     foreignKey: 'user_id',
@@ -22,19 +27,13 @@ Post.hasMany(Comment, {
 
 //Comments belong to a post
 Comment.belongsTo(Post, {
-    foreignKey: 'post_id',
+    foreignKey: 'post_id'
 });
 
-// Posts must have a user
-Post.belongsTo(User, {
-    as: 'poster',
-    foreignKey: 'user_id',
-})
 
 // Comments must have a user
 Comment.belongsTo(User, {
-    as: 'commenter',
-    foreignKey: 'user_id',
+    foreignKey: 'user_id'
 })
 
 module.exports = { User, Post, Comment };
