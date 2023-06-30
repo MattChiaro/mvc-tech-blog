@@ -1,0 +1,32 @@
+[
+    {
+      "body": "Great introduction! Looking forward to learning more.",
+      "user_id": 2,
+      "post_id": 1
+    },
+    {
+      "body": "Python data structures are so versatile.",
+      "user_id": 3,
+      "post_id": 2
+    },
+    {
+      "body": "TensorFlow makes deep learning so much easier.",
+      "user_id": 1,
+      "post_id": 3
+    },
+    {
+      "body": "Node.js has revolutionized server-side JavaScript.",
+      "user_id": 2,
+      "post_id": 4
+    },
+    {
+      "body": "I agree! JavaScript is everywhere now.",
+      "user_id": 3,
+      "post_id": 1
+    },
+    {
+      "body": "Python is my favorite language for data manipulation.",
+      "user_id": 1,
+      "post_id": 2
+    }
+  ]
