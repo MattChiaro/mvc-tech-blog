@@ -1,4 +1,15 @@
-<div>
-    <h1>Homepage</h1>
-    <p>Welcome to the homepage!</p>
+{{#each posts as |post|}}
+<div class="card">
+  <h5 class="card-header">{{post.title}}</h5>
+  <div class="card-body">
+    <h5 class="card-title">Posted by: {{post.user.username}}</h5>
+    <p class="card-text">{{post.body}}</p>
+    <ul class="list-group">
+    {{#each comments as |comment|}}
+        <li class="list-group-item">{{comment.body}} <b>by: {{comment.user.username}}</b></li>
+        {{/each}}
+    </ul>
+    {{!-- <a href="#" class="btn btn-primary">Comment</a> --}}
+  </div>
 </div>
+{{/each}}
