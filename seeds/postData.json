@@ -1,0 +1,22 @@
+[
+    {
+      "title": "Introduction to JavaScript",
+      "body": "JavaScript is a programming language commonly used for web development.",
+      "user_id": 1
+    },
+    {
+      "title": "Data Structures in Python",
+      "body": "Learn about various data structures like lists, dictionaries, and tuples in Python.",
+      "user_id": 2
+    },
+    {
+      "title": "Deep Learning with TensorFlow",
+      "body": "Explore the world of deep learning using TensorFlow framework.",
+      "user_id": 3
+    },
+    {
+      "title": "Introduction to Node.js",
+      "body": "Discover the basics of Node.js and its role in server-side JavaScript development.",
+      "user_id": 1
+    }
+  ]
