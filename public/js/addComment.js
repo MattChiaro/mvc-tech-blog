@@ -6,7 +6,6 @@ let element = event.target.parentElement.children[1];
     const postId = element.getAttribute('data-post-id');
     const comment = element.value.trim();
  
-console.log(postId, comment)
     if (comment) {
         const response = await fetch('/api/comments', {
             method: 'POST',
