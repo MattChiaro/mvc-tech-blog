@@ -69,10 +69,36 @@ router.get('/login', (req, res) => {
         });
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', async (req, res) => {
+    try {
+        const postData = await Post.findAll({
+            include: [
+                {
+                    model: Comment,
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['username'],
+                        },
+                    ],
+                },
+                {
+                    model: User,
+                    attributes: ['username', 'id'],
+                },
+            ],
+        });
+
+        const posts = postData.map((post) => post.get({ plain: true }));
+
     res.render('dashboard', {
-        logged_in: req.session.logged_in,
+        posts,
     });
+
+} catch (err) {
+    res.status(500).json(err);
+}
 });
+
 
 module.exports = router;
